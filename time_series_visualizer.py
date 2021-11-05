@@ -48,6 +48,7 @@ def draw_box_plot():
     df_box.reset_index(inplace=True)
     df_box['year'] = [d.year for d in df_box.date]
     df_box['month'] = [d.strftime('%m') for d in df_box.date]
+    df_box['month_name'] = [d.strftime('%b') for d in df_box.date]
 
     # # Draw box plots (using Seaborn)
     fig, ((ax0, ax1)) = plt.subplots(figsize=(18, 8), nrows=1, ncols=2)
@@ -59,9 +60,8 @@ def draw_box_plot():
     ax0.set_ylabel('Page Views')
 
     df_box.sort_values(by='month', inplace=True)
-    df_box['month'] = pd.to_datetime(df_box.month, format='%m').dt.strftime('%b')
 
-    sns.boxplot(x=df_box.month, y=df_box.value, ax=ax1)
+    sns.boxplot(x=df_box.month_name, y=df_box.value, ax=ax1)
 
     ax1.set_title('Month-wise Box Plot (Seasonality)')
     ax1.set_xlabel('Month')
