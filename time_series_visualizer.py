@@ -35,7 +35,7 @@ def draw_bar_plot():
 
     df_bar.plot.bar(ax=ax)
 
-    ax.set_title('Daily freeCodeCamp Forum Page Views 5/2016-12/2019')
+    ax.set_title('Monthly freeCodeCamp Forum Page Views 5/2016-12/2019')
     ax.set_ylabel('Average Page Views')
 
     # Save image and return fig (don't change this part)
