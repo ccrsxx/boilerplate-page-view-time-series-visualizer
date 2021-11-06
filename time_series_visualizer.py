@@ -38,6 +38,8 @@ def draw_bar_plot():
     ax.set_title('Monthly freeCodeCamp Forum Page Views 5/2016-12/2019')
     ax.set_ylabel('Average Page Views')
 
+    plt.xticks(rotation=0)
+
     # Save image and return fig (don't change this part)
     fig.savefig('bar_plot.png')
     return fig
